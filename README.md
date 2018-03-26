@@ -1,6 +1,6 @@
 # FootBallLeague
 ** Website based on angularjs and bootstrap
-## Creates a single page application using AngularJS which has following views -
+## Created a single page application using AngularJS which has following views -
  1. A view to display all matches held. This view should contain various filters like
 filter by year, filter by Team name, filter by score etc. (you can more filters as you
 see fit, you will earn extra points for that).
