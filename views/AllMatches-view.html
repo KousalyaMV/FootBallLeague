@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <label>Filter by :</label>
+  <select id="filterby" ng-model="columns" ng-options="e for e in footballLeague.headers">
+    </select>
+    <label>Search Table Data:</label>
+     <input type="text" ng-model="search[columns]" 
+        placeholder="Enter some text to search"/>
+
+<h5 style="color:green">Please Click on table View link to get single match Details</h5>
+<table id="tblAllMatch" class="table table-striped table-bordered table-hover table-responsive">
+        <thead>
+         <th>
+          Single Match Details
+         </th>
+          <th>Date
+          </th>
+           <th>
+            Team 1
+          </th>
+          <th>
+            Team 2
+          </th>
+          <th>
+            Team1 Score
+            </th>
+                <th>
+            Team2 Score
+            </th>
+      </thead>
+      <tbody>   
+        <tr dir-paginate="details in footballLeague.getMatchDetails| filter:search|itemsPerPage:15">
+         <td style="cursor: pointer"><a ng-href="#/Date/{{details.Date}}/Team1Name/{{details.Team1Name}}/Team2Name/{{details.Team2Name}}/Team1Score/{{details.Team1Score}}/Team2Score/{{details.Team2Score}}">View</a></td>
+
+          <td>    
+            {{details.Date}}
+          </td>
+          <td>
+           {{details.Team1Name}}
+          </td>
+           <td>
+           {{details.Team2Name}}
+          </td>
+           <td>
+            {{details.Team1Score}}
+          </td>
+          <td>
+            {{details.Team2Score}}
+          </td>
+        </tr>
+        <dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+    </dir-pagination-controls>
+  </tbody>
+    </table>
+  </div>

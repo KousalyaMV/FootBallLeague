@@ -1,0 +1,27 @@
+
+
+ <div class="container-fluid bs-component">
+ 	<div>
+ 		<hr class="col-lg-10 col-md-10"></hr>
+ 	<h3 class="col-lg-10 col-md-10">Matches played 2015-2017</h3>
+             <div  class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 " ng-repeat="(key, value) in TeamWiseStatistics.TotalMatchesPlayed|groupBy:'TeamTotal'">
+                  <span> <b>{{key}} : </b></span>
+                    <span>  Total Matches Played:{{value.length}}</span>
+                  </div>
+
+    <hr class="col-lg-10 col-md-10"></hr>
+    <h3 class="col-lg-10 col-md-10" >Matches Won 2015-2017</h3>           
+            <div  class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" 
+              ng-repeat="(key, value) in TeamWiseStatistics.TotalWon|groupBy:'Teams'">
+                      <span> <b>{{key}} : </b></span>
+                     <span> Total Matches Won: {{value.length}}</span> 
+                      </div>
+       <hr class="col-lg-10 col-md-10"> </hr>             
+    <h3 class="col-lg-10 col-md-10">Matches Lost 2015-2017</h3>   
+                      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" ng-repeat="(key, value) in TeamWiseStatistics.TotalLost|groupBy:'Teams1'">
+                      <span> <b>{{key}} : </b></span>
+                     <span> Total Matches Lost: {{value.length}}</span>                     
+                </div> 
+                <hr> </hr>
+                </div> 
+</div> 
